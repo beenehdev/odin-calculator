@@ -1,8 +1,17 @@
 "use strict";
 
-let a = null;
-let b = null;
-let operatorSymbol = 0;
+let a = NaN;
+let b = NaN;
+let operatorSymbol = NaN;
+
+function tryOperate {
+    if (!Number.isNaN(a) && !Number.isNaN(b) && !Number.isNaN(operatorSymbol)) {
+        operate(a, b, operatorSymbol);
+    } else {
+        b = NaN;
+        operatorSymbol = NaN;
+    };
+};
 
 function sum(a, b) {
     return a + b;
@@ -25,16 +34,20 @@ function operate(a, b, operatorSymbol) {
         case 0:
             break;
         case 1:
-            sum(a, b);
+            a = sum(a, b);
             break;
         case 2:
-            subtract(a, b);
+            a = subtract(a, b);
             break;
         case 3:
-            multiply(a, b);
+            a = multiply(a, b);
             break;
         case 4:
-            divide(a, b);
+            a = divide(a, b);
             break;
     };
+    res = a;
+    b = NaN;
+    operatorSymbol = NaN; 
+    return res;
 };
