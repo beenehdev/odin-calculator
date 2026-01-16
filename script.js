@@ -89,7 +89,7 @@ function handleClick() {
         console.warn("Unhandled input:", value);
         return;
     };
-    };
+};
 
 const stateHandler = {
     numStateHandler(value) {
