@@ -1,5 +1,7 @@
 # odin-calculator
 
+Link here: https://beenehdev.github.io/odin-calculator/
+
 Project made for The Odin Project's https://www.theodinproject.com/lessons/foundations-calculator Foundations Capstone project/assignment. 
 
 Known bugs:
