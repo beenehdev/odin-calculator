@@ -105,16 +105,18 @@ function checkRecentResult() {
     if (resultJustShown === true && state.operatorSymbol === null) {
         state.a = "";
         resultJustShown = false;
+    } else {
+        resultJustShown = false;
     };
 };
 
 const stateHandler = {
     numStateHandler(value) {
-        checkRecentResult();
         if (state.a === null) {
             state.a = "";
             state.a += value;
         } else if (state.operatorSymbol === null) {
+            checkRecentResult();
             state.a += value;
         } else if (state.operatorSymbol !== null && state.b === null) {
             state.b = "";
