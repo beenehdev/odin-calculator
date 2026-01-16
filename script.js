@@ -115,7 +115,6 @@ const stateHandler = {
             state.a = "";
             state.a += value;
         } else if (state.operatorSymbol === null) {
-            console.log("case b fired");
             state.a += value;
         } else if (state.operatorSymbol !== null && state.b === null) {
             state.b = "";
