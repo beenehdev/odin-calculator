@@ -6,6 +6,15 @@
     height: 750px;
 }
 
+#display {
+    border: 1px solid black;
+    margin: 1px;
+    text-align: center;
+    width: 164px;
+    height: 25px;
+    font-size: 1.3em;
+}
+
 .row {
     display: flex;
     justify-content: right;
