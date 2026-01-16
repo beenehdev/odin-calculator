@@ -102,8 +102,8 @@ function handleClick() {
 };
 
 function checkRecentResult() {
-    if (resultJustShown === true) {
-        state.a = null;
+    if (resultJustShown === true && state.operatorSymbol === null) {
+        state.a = "";
         resultJustShown = false;
     };
 };
@@ -115,6 +115,7 @@ const stateHandler = {
             state.a = "";
             state.a += value;
         } else if (state.operatorSymbol === null) {
+            console.log("case b fired");
             state.a += value;
         } else if (state.operatorSymbol !== null && state.b === null) {
             state.b = "";
