@@ -4,7 +4,6 @@ let state = {
     a: null,
     b: null,
     operatorSymbol: null,
-    res: null,
 };
 
 let resultJustShown = false; 
@@ -23,7 +22,7 @@ function tryOperate() {
     if (state.a !== null && state.b !== null && state.operatorSymbol !== null) {
         state.a = Number(state.a);
         state.b = Number(state.b);
-        operate(state.a, state.b, state.operatorSymbol);
+        operate();
     } else {
         console.log("Incomplete Expression!");
         state = {
@@ -36,19 +35,19 @@ function tryOperate() {
 };
 
 const mathWrapper = {
-    sum(a, b) {
+    sum() {
         return state.a + state.b;
     },
 
-    subtract(a, b) {
+    subtract() {
         return state.a - state.b;
     },
 
-    multiply(a, b) {
+    multiply() {
         return state.a * state.b;
     },
 
-    divide(a, b) {
+    divide() {
         if (state.b === 0) {
             alert("One does not simply divide by zero");
             state.b = 1;
@@ -57,8 +56,8 @@ const mathWrapper = {
     },
 };
 
-function operate(a, b, operatorSymbol) {
-    switch (operatorSymbol) {
+function operate() {
+    switch (state.operatorSymbol) {
         case "+":
             state.a = mathWrapper.sum(state.a, state.b);
             break;
@@ -77,8 +76,8 @@ function operate(a, b, operatorSymbol) {
     state.a = Math.round(state.a * 100) / 100
     state.b = null;
     state.operatorSymbol = null; 
-    updateDisplay();
     resultJustShown = true;
+    updateDisplay();
     return state.a;
 };
 
