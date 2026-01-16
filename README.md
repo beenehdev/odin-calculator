@@ -13,3 +13,5 @@ Known bugs:
 4. Not tested on multiple displays.
 
 5. Generally not stress tested beyond being functional.
+
+6. Some bigger functions could use Extract Function. 
